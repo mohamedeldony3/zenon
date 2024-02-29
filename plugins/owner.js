@@ -24,7 +24,7 @@ renderLargerThumbnail: true
 }
 handler.help = ['owner']
 handler.tags = ['infobot']
-handler.command = ['oner','b','list'] 
+handler.command = ['owner','m','list'] 
 handler.register = false
 
 
