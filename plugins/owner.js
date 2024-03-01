@@ -1,18 +1,11 @@
-import fetch from 'node-fetch'
-let handler = async (m, { conn }) => {
-  let caption = `
-╭────────────────────
-│👋 مرحبا يا , ${conn.getName(m.sender)}!
-│🤖 أتمنى أنك بخير ♥ البوت أون لاين الآن 
-يمكنك إستخدامه عبر كتابة menu.
-╰────────────────────
-*─[ BY NOUREDDINE_OUAFY ]*🌟✨
-`.trim()
-  m.reply(caption)
-}
-handler.help = ['owner']
-handler.tags = ['infobot']
-handler.command = /^(alive)$/i
+function handler(m) {
+  const data = global.owner.filter(([id, isCreator]) => id && isCreator)
+  this.sendContact(m.chat, data.map(([id, name]) => [id, name]), m)
 
+}
+
+handler.help = ['owner']
+handler.tags = ['main']
+handler.command = ['owner', 'مطور', 'المطور', 'المالك'] 
 
 export default handler
